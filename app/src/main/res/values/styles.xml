@@ -1,7 +1,9 @@
-<resources>
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.Gallerit" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/deep_orange_500</item>
+        <item name="colorPrimaryDark">@color/deep_orange_700</item>
+        <item name="colorAccent">@color/deep_orange_700</item>
+        <item name="android:statusBarColor">?android:colorBackground</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
     </style>
 </resources>

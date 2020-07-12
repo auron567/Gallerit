@@ -44,11 +44,15 @@ dependencies {
     implementation(Libs.fragmentKtx)
     implementation(Libs.constraintLayout)
     implementation(Libs.recyclerview)
+    implementation(Libs.viewpager)
     implementation(Libs.material)
     // ViewModel and LiveData
     implementation(Libs.viewmodelKtx)
     implementation(Libs.livedataKtx)
     implementation(Libs.lifecycleRuntimeKtx)
+    // Navigation
+    implementation(Libs.navigationKtx)
+    implementation(Libs.navigationUiKtx)
     // Room
     implementation(Libs.roomRuntime)
     implementation(Libs.roomKtx)

@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">ImageGallery</string>
+    <string name="app_name">Gallerit</string>
+
+    <!-- HomeViewPagerFragment values -->
+    <string name="images">Images</string>
+    <string name="my_collection">My Collection</string>
 </resources>
