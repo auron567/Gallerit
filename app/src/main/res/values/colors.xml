@@ -2,4 +2,5 @@
 <resources>
     <color name="deep_orange_500">#FF5722</color>
     <color name="deep_orange_700">#E64A19</color>
+    <color name="gray_600">#757575</color>
 </resources>
