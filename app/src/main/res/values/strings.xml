@@ -4,4 +4,8 @@
     <!-- HomeViewPagerFragment values -->
     <string name="images">Images</string>
     <string name="my_collection">My Collection</string>
+
+    <!-- ImagesFragment values -->
+    <string name="search">Search</string>
+    <string name="subreddit">Subreddit…</string>
 </resources>
