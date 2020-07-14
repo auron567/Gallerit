@@ -1,8 +1,8 @@
 <resources>
     <style name="Base.Theme.Gallerit" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/deep_orange_500</item>
+        <item name="colorPrimary">@android:color/white</item>
         <item name="colorPrimaryDark">@color/deep_orange_700</item>
-        <item name="colorAccent">@color/deep_orange_700</item>
+        <item name="colorAccent">@color/deep_orange_500</item>
         <item name="android:statusBarColor">@color/gray_600</item>
         <item name="searchViewStyle">@style/Widget.AppCompat.SearchView.ActionBar</item>
     </style>

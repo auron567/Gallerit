@@ -30,6 +30,7 @@
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            app:tabIndicatorColor="?attr/colorAccent"
             app:tabIconTint="@drawable/tab_icon_color_selector"
             app:tabTextColor="@android:color/black" />
 
