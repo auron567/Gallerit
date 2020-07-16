@@ -5,16 +5,16 @@ import android.view.*
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import com.example.imagegallery.R
-import com.example.imagegallery.databinding.FragmentImagesBinding
+import com.example.imagegallery.databinding.FragmentImageListBinding
 
-class ImagesFragment : Fragment() {
+class ImageListFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentImagesBinding.inflate(inflater, container, false)
+        val binding = FragmentImageListBinding.inflate(inflater, container, false)
 
         setHasOptionsMenu(true)
         return binding.root

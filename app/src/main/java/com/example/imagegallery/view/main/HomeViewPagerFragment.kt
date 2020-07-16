@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.imagegallery.R
 import com.example.imagegallery.adapter.COLLECTION_PAGE_INDEX
 import com.example.imagegallery.adapter.HomePagerAdapter
-import com.example.imagegallery.adapter.IMAGES_PAGE_INDEX
+import com.example.imagegallery.adapter.IMAGE_LIST_PAGE_INDEX
 import com.example.imagegallery.databinding.FragmentHomeViewPagerBinding
 import com.google.android.material.tabs.TabLayoutMediator
 import java.lang.IndexOutOfBoundsException
@@ -44,7 +44,7 @@ class HomeViewPagerFragment : Fragment() {
      */
     private fun getTabIcon(position: Int): Int {
         return when (position) {
-            IMAGES_PAGE_INDEX -> R.drawable.images_tab_selector
+            IMAGE_LIST_PAGE_INDEX -> R.drawable.images_tab_selector
             COLLECTION_PAGE_INDEX -> R.drawable.collection_tab_selector
             else -> throw IndexOutOfBoundsException()
         }
@@ -55,7 +55,7 @@ class HomeViewPagerFragment : Fragment() {
      */
     private fun getTabTitle(position: Int): String {
         return when (position) {
-            IMAGES_PAGE_INDEX -> getString(R.string.images)
+            IMAGE_LIST_PAGE_INDEX -> getString(R.string.images)
             COLLECTION_PAGE_INDEX -> getString(R.string.my_collection)
             else -> throw IndexOutOfBoundsException()
         }
