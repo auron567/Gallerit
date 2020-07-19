@@ -1,7 +1,7 @@
 private object Versions {
     const val androidGradlePlugin = "4.0.1"
     const val kotlin = "1.3.72"
-    const val coroutines = "1.3.7"
+    const val coroutines = "1.3.8"
     const val appcompat = "1.1.0"
     const val fragment = "1.2.5"
     const val constraintLayout = "1.1.3"
