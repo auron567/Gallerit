@@ -73,4 +73,6 @@ dependencies {
     // Unit Tests
     testImplementation(TestLibs.junit)
     testImplementation(TestLibs.mockk)
+    testImplementation(TestLibs.kotestAssertions)
+    testImplementation(TestLibs.coroutinesTest)
 }

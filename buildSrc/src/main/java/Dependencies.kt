@@ -18,6 +18,7 @@ private object Versions {
     const val timber = "4.7.1"
     const val junit = "4.13"
     const val mockk = "1.10.0"
+    const val kotest = "4.1.1"
 }
 
 object BuildPlugins {
@@ -56,4 +57,6 @@ object Libs {
 object TestLibs {
     const val junit = "junit:junit:${Versions.junit}"
     const val mockk = "io.mockk:mockk:${Versions.mockk}"
+    const val kotestAssertions = "io.kotest:kotest-assertions-core-jvm:${Versions.kotest}"
+    const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
 }
