@@ -25,6 +25,9 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    testOptions {
+        unitTests.isIncludeAndroidResources = true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -74,5 +77,7 @@ dependencies {
     testImplementation(TestLibs.junit)
     testImplementation(TestLibs.mockk)
     testImplementation(TestLibs.kotestAssertions)
+    testImplementation(TestLibs.androidxTest)
     testImplementation(TestLibs.coroutinesTest)
+    testImplementation(TestLibs.robolectric)
 }

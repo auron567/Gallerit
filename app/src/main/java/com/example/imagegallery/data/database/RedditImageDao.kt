@@ -14,8 +14,8 @@ interface RedditImageDao {
     fun getAllImages(): Flow<List<RedditImage>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertImage(image: RedditImage)
+    suspend fun insertImage(vararg images: RedditImage)
 
     @Delete
-    suspend fun deleteImage(image: RedditImage)
+    suspend fun deleteImage(vararg images: RedditImage)
 }

@@ -19,6 +19,8 @@ private object Versions {
     const val junit = "4.13"
     const val mockk = "1.10.0"
     const val kotest = "4.1.1"
+    const val androidxTest = "1.2.0"
+    const val robolectric = "4.3.1"
 }
 
 object BuildPlugins {
@@ -58,5 +60,7 @@ object TestLibs {
     const val junit = "junit:junit:${Versions.junit}"
     const val mockk = "io.mockk:mockk:${Versions.mockk}"
     const val kotestAssertions = "io.kotest:kotest-assertions-core-jvm:${Versions.kotest}"
+    const val androidxTest = "androidx.test:core:${Versions.androidxTest}"
     const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
+    const val robolectric = "org.robolectric:robolectric:${Versions.robolectric}"
 }
