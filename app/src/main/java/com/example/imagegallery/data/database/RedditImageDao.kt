@@ -1,6 +1,7 @@
 package com.example.imagegallery.data.database
 
 import androidx.room.*
+import com.example.imagegallery.app.RedditImages
 import com.example.imagegallery.data.model.RedditImage
 import kotlinx.coroutines.flow.Flow
 
@@ -11,7 +12,7 @@ import kotlinx.coroutines.flow.Flow
 interface RedditImageDao {
 
     @Query("SELECT * FROM images")
-    fun getAllImages(): Flow<List<RedditImage>>
+    fun getAllImages(): Flow<RedditImages>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertImage(vararg images: RedditImage)
