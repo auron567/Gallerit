@@ -4,25 +4,114 @@ import android.os.Bundle
 import android.view.*
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.observe
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.imagegallery.R
+import com.example.imagegallery.adapter.RedditImageAdapter
+import com.example.imagegallery.app.RedditImages
+import com.example.imagegallery.data.model.Result
 import com.example.imagegallery.databinding.FragmentImageListBinding
+import com.example.imagegallery.viewmodel.ImageListViewModel
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class ImageListFragment : Fragment() {
+
+    private lateinit var binding: FragmentImageListBinding
+
+    private val viewModel: ImageListViewModel by viewModel()
+    private val imageAdapter = RedditImageAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentImageListBinding.inflate(inflater, container, false)
+        binding = FragmentImageListBinding.inflate(inflater, container, false)
 
+        setImagesObserver()
+        setImagesRecyclerView()
+        setSwipeRefreshLayout()
         setHasOptionsMenu(true)
+
         return binding.root
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_images, menu)
         setSearchView(menu)
+    }
+
+    /**
+     * LiveData observer configuration.
+     */
+    private fun setImagesObserver() {
+        viewModel.images.observe(viewLifecycleOwner) { result ->
+            when (result) {
+                is Result.Loading -> {
+                    binding.swipeRefreshLayout.isRefreshing = true
+                }
+                is Result.Success -> {
+                    showImagesRecyclerView(result.data)
+                }
+                is Result.Empty -> {
+                    val message = getString(R.string.no_images)
+                    showEmptyView(message)
+                }
+                is Result.Error -> {
+                    val message = if (result.isNetworkError) {
+                        getString(R.string.no_internet)
+                    } else {
+                        getString(R.string.no_images)
+                    }
+                    showEmptyView(message)
+                }
+            }
+        }
+    }
+
+    /**
+     * Show the empty view with a [message].
+     */
+    private fun showEmptyView(message: String) {
+        with(binding) {
+            swipeRefreshLayout.isRefreshing = false
+            hasImages = false
+            emptyText.text = message
+        }
+
+        // Submit an empty list since there is no data
+        imageAdapter.submitList(emptyList())
+    }
+
+    /**
+     * Show the recycler view and submit a list of [images].
+     */
+    private fun showImagesRecyclerView(images: RedditImages) {
+        with(binding) {
+            swipeRefreshLayout.isRefreshing = false
+            hasImages = true
+        }
+
+        imageAdapter.submitList(images)
+    }
+
+    /**
+     * RecyclerView configuration.
+     */
+    private fun setImagesRecyclerView() {
+        binding.imagesRecyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = imageAdapter
+        }
+    }
+
+    /**
+     * SwipeRefreshLayout configuration.
+     *
+     * Disable `pull to refresh` gesture and use only progress animation to indicate data loading.
+     */
+    private fun setSwipeRefreshLayout() {
+        binding.swipeRefreshLayout.isEnabled = false
     }
 
     /**
@@ -37,13 +126,12 @@ class ImageListFragment : Fragment() {
 
             // Set listener for user actions
             setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-                override fun onQueryTextSubmit(query: String?): Boolean {
-                    // TODO: handle text submit
-                    return true
+                override fun onQueryTextSubmit(query: String): Boolean {
+                    return false
                 }
 
-                override fun onQueryTextChange(newText: String?): Boolean {
-                    // TODO: handle text change
+                override fun onQueryTextChange(newText: String): Boolean {
+                    viewModel.setQuery(newText)
                     return true
                 }
             })

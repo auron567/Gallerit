@@ -24,6 +24,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
     testOptions {
         unitTests.isIncludeAndroidResources = true
@@ -49,7 +50,8 @@ dependencies {
     // UI and Appcompat
     implementation(Libs.appcompat)
     implementation(Libs.fragmentKtx)
-    implementation(Libs.constraintLayout)
+    implementation(Libs.constraintlayout)
+    implementation(Libs.swiperefreshlayout)
     implementation(Libs.recyclerview)
     implementation(Libs.viewpager)
     implementation(Libs.material)
