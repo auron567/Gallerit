@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.imagegallery.app.loadWithThumbnail
 import com.example.imagegallery.data.model.RedditImage
 import com.example.imagegallery.databinding.ListItemImageBinding
 
@@ -32,7 +33,7 @@ class RedditImageAdapter : ListAdapter<RedditImage, RecyclerView.ViewHolder>(Red
         : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(image: RedditImage) {
-            // TODO: bind views
+            binding.imageView.loadWithThumbnail(image.url)
         }
     }
 }

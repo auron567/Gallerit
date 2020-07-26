@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Gallerit</string>
 
+    <!-- Content Descriptions -->
+    <string name="content_description_image">Image</string>
+
     <!-- HomeViewPagerFragment values -->
     <string name="images">Images</string>
     <string name="my_collection">My Collection</string>

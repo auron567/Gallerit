@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="dp_4">4dp</dimen>
+
+    <!-- RedditImage List values -->
+    <dimen name="image_height">200dp</dimen>
+    <dimen name="header_margin">16dp</dimen>
+    <dimen name="card_bottom_margin">16dp</dimen>
+    <dimen name="card_side_margin">8dp</dimen>
+    <dimen name="card_corner_radius">10dp</dimen>
 </resources>

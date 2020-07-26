@@ -27,7 +27,14 @@
                 android:id="@+id/images_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:isInvisible="@{!hasImages}" />
+                android:paddingTop="@dimen/header_margin"
+                android:paddingStart="@dimen/card_side_margin"
+                android:paddingEnd="@dimen/card_side_margin"
+                android:clipToPadding="false"
+                app:isInvisible="@{!hasImages}"
+                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:spanCount="2"
+                tools:listitem="@layout/list_item_image" />
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

@@ -5,7 +5,7 @@ import android.view.*
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.imagegallery.R
 import com.example.imagegallery.adapter.RedditImageAdapter
 import com.example.imagegallery.app.RedditImages
@@ -100,7 +100,7 @@ class ImageListFragment : Fragment() {
      */
     private fun setImagesRecyclerView() {
         binding.imagesRecyclerView.apply {
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = GridLayoutManager(context, 2)
             adapter = imageAdapter
         }
     }
