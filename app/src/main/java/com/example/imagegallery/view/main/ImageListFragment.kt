@@ -76,7 +76,7 @@ class ImageListFragment : Fragment() {
         with(binding) {
             swipeRefreshLayout.isRefreshing = false
             hasImages = false
-            emptyText.text = message
+            noDataText.text = message
         }
 
         // Submit an empty list since there is no data

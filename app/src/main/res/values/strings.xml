@@ -3,6 +3,7 @@
 
     <!-- Content Descriptions -->
     <string name="content_description_image">Image</string>
+    <string name="content_description_no_data">No data</string>
 
     <!-- HomeViewPagerFragment values -->
     <string name="images">Images</string>

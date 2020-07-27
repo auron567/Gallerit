@@ -27,27 +27,45 @@
                 android:id="@+id/images_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingTop="@dimen/header_margin"
-                android:paddingStart="@dimen/card_side_margin"
-                android:paddingEnd="@dimen/card_side_margin"
                 android:clipToPadding="false"
+                android:paddingStart="@dimen/card_side_margin"
+                android:paddingTop="@dimen/header_margin"
+                android:paddingEnd="@dimen/card_side_margin"
                 app:isInvisible="@{!hasImages}"
                 tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                tools:spanCount="2"
-                tools:listitem="@layout/list_item_image" />
+                tools:listitem="@layout/list_item_image"
+                tools:spanCount="2" />
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-        <TextView
-            android:id="@+id/empty_text"
+        <ImageView
+            android:id="@+id/no_data_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/content_description_no_data"
+            app:isGone="@{hasImages}"
+            app:layout_constraintBottom_toTopOf="@+id/no_data_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:srcCompat="@drawable/reddit_logo" />
+
+        <TextView
+            android:id="@+id/no_data_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
             android:text="@string/no_images"
             app:isGone="@{hasImages}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/no_data_image" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
