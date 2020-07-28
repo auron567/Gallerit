@@ -16,6 +16,7 @@ private object Versions {
     const val okhttp = "4.7.2"
     const val koin = "2.1.6"
     const val glide = "4.11.0"
+    const val photoview = "2.0.0"
     const val timber = "4.7.1"
     const val junit = "4.13"
     const val mockk = "1.10.0"
@@ -56,6 +57,7 @@ object Libs {
     const val koinViewmodel = "org.koin:koin-android-viewmodel:${Versions.koin}"
     const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
     const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
+    const val photoview = "com.github.chrisbanes:PhotoView:${Versions.photoview}"
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
 }
 

@@ -78,6 +78,8 @@ dependencies {
     // Glide
     implementation(Libs.glide)
     kapt(Libs.glideCompiler)
+    // PhotoView
+    implementation(Libs.photoview)
     // Timber
     implementation(Libs.timber)
 
