@@ -5,6 +5,7 @@ import android.view.*
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.imagegallery.R
 import com.example.imagegallery.adapter.RedditImageAdapter
@@ -19,7 +20,7 @@ class ImageListFragment : Fragment() {
     private lateinit var binding: FragmentImageListBinding
 
     private val viewModel: ImageListViewModel by viewModel()
-    private val imageAdapter = RedditImageAdapter()
+    private val imageAdapter = RedditImageAdapter(this::onItemClicked)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -103,6 +104,20 @@ class ImageListFragment : Fragment() {
             layoutManager = GridLayoutManager(context, 2)
             adapter = imageAdapter
         }
+    }
+
+    /**
+     * RecyclerView item click configuration.
+     */
+    private fun onItemClicked(position: Int) {
+        // Get current list of images
+        val images = imageAdapter.currentList.toTypedArray()
+        // Get direction and pass list of images and position of item clicked
+        val direction =
+            HomeViewPagerFragmentDirections.homeViewPagerFragmentToGalleryFragment(images, position)
+
+        // Navigate to GalleryFragment
+        findNavController().navigate(direction)
     }
 
     /**

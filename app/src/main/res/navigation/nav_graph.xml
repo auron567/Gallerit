@@ -8,6 +8,22 @@
     <fragment
         android:id="@+id/home_view_pager_fragment"
         android:name="com.example.imagegallery.view.main.HomeViewPagerFragment"
-        tools:layout="@layout/fragment_home_view_pager" />
+        tools:layout="@layout/fragment_home_view_pager">
+        <action
+            android:id="@+id/home_view_pager_fragment_to_gallery_fragment"
+            app:destination="@id/gallery_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gallery_fragment"
+        android:name="com.example.imagegallery.view.main.GalleryFragment"
+        tools:layout="@layout/fragment_gallery">
+        <argument
+            android:name="images"
+            app:argType="com.example.imagegallery.data.model.RedditImage[]" />
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
 
 </navigation>

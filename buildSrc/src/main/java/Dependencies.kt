@@ -27,6 +27,7 @@ private object Versions {
 object BuildPlugins {
     const val androidGradle = "com.android.tools.build:gradle:${Versions.androidGradlePlugin}"
     const val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
+    const val safeArgsGradle = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}"
 }
 
 object Libs {
