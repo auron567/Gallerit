@@ -24,6 +24,18 @@
         <argument
             android:name="position"
             app:argType="integer" />
+        <action
+            android:id="@+id/gallery_fragment_to_image_info_dialog_fragment"
+            app:destination="@id/image_info_dialog_fragment" />
     </fragment>
+
+    <dialog
+        android:id="@+id/image_info_dialog_fragment"
+        android:name="com.example.imagegallery.view.main.ImageInfoDialogFragment"
+        tools:layout="@layout/dialog_fragment_image_info">
+        <argument
+            android:name="image"
+            app:argType="com.example.imagegallery.data.model.RedditImage" />
+    </dialog>
 
 </navigation>

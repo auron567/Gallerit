@@ -14,4 +14,8 @@
     <string name="subreddit">Subreddit…</string>
     <string name="no_images">No images to show!</string>
     <string name="no_internet">No internet connection!</string>
+
+    <!-- ImageInfoDialogFragment values -->
+    <string name="subreddit_name_prefixed">r/%1$s</string>
+    <string name="save">Save</string>
 </resources>

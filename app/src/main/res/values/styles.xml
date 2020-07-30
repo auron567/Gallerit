@@ -5,7 +5,16 @@
         <item name="colorAccent">@color/deep_orange_500</item>
         <item name="android:statusBarColor">@color/gray_600</item>
         <item name="searchViewStyle">@style/Widget.AppCompat.SearchView.ActionBar</item>
+        <item name="bottomSheetDialogTheme">@style/Theme.Gallerit.BottomSheetDialog</item>
     </style>
 
     <style name="Theme.Gallerit" parent="Base.Theme.Gallerit" />
+
+    <style name="Theme.Gallerit.BottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Theme.Gallerit.BottomSheet</item>
+    </style>
+
+    <style name="Theme.Gallerit.BottomSheet" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/rounded_background</item>
+    </style>
 </resources>

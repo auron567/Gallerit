@@ -12,8 +12,10 @@ import com.example.imagegallery.databinding.ListItemGalleryBinding
 /**
  * Adapter class [RecyclerView.Adapter] for [ViewPager2] which binds [RedditImage].
  */
-class GalleryPagerAdapter(private val images: MutableList<RedditImage> = mutableListOf())
-    : RecyclerView.Adapter<GalleryPagerAdapter.ViewHolder>() {
+class GalleryPagerAdapter(
+    private val onItemClicked: (RedditImage) -> Unit,
+    private val images: MutableList<RedditImage> = mutableListOf()
+) : RecyclerView.Adapter<GalleryPagerAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ListItemGalleryBinding.inflate(
@@ -28,7 +30,7 @@ class GalleryPagerAdapter(private val images: MutableList<RedditImage> = mutable
     override fun getItemCount() = images.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(images[position])
+        holder.bind(images[position], onItemClicked)
     }
 
     fun submitList(list: RedditImages) {
@@ -40,7 +42,11 @@ class GalleryPagerAdapter(private val images: MutableList<RedditImage> = mutable
     class ViewHolder(private val binding: ListItemGalleryBinding)
         : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(image: RedditImage) {
+        fun bind(image: RedditImage, onItemClicked: (RedditImage) -> Unit) {
+            binding.imageView.setOnClickListener {
+                onItemClicked(image)
+            }
+
             binding.imageView.load(image.url)
         }
     }
