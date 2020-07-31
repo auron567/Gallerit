@@ -16,27 +16,42 @@ import java.lang.IndexOutOfBoundsException
 
 class HomeViewPagerFragment : Fragment() {
 
+    private lateinit var binding: FragmentHomeViewPagerBinding
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentHomeViewPagerBinding.inflate(inflater, container, false)
+        binding = FragmentHomeViewPagerBinding.inflate(inflater, container, false)
+
+        setViewPager()
+        setTabLayout()
+        setToolbar()
+
+        return binding.root
+    }
+
+    /**
+     * ViewPager configuration.
+     */
+    private fun setViewPager() {
+        // Set ViewPager adapter
+        binding.viewPager.adapter = HomePagerAdapter(this)
+    }
+
+    /**
+     * TabLayout configuration.
+     */
+    private fun setTabLayout() {
         val viewPager = binding.viewPager
         val tabLayout = binding.tabLayout
-
-        // Set ViewPager adapter
-        viewPager.adapter = HomePagerAdapter(this)
 
         // Set TabLayout icons and texts and attach it to ViewPager
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.setIcon(getTabIcon(position))
             tab.text = getTabTitle(position)
         }.attach()
-
-        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
-
-        return binding.root
     }
 
     /**
@@ -59,5 +74,12 @@ class HomeViewPagerFragment : Fragment() {
             COLLECTION_PAGE_INDEX -> getString(R.string.my_collection)
             else -> throw IndexOutOfBoundsException()
         }
+    }
+
+    /**
+     * Toolbar configuration.
+     */
+    private fun setToolbar() {
+        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
     }
 }

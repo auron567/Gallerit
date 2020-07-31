@@ -7,6 +7,7 @@ import com.example.imagegallery.app.RedditImages
 import com.example.imagegallery.data.model.RedditImage
 import com.example.imagegallery.data.model.Result
 import com.example.imagegallery.data.repository.RedditImageRepository
+import com.example.imagegallery.view.main.ImageListFragment
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.filter
@@ -14,6 +15,8 @@ import kotlinx.coroutines.flow.flatMapLatest
 
 /**
  * The [ViewModel] for fetching a list of top [RedditImage] from a subreddit.
+ *
+ * Used in [ImageListFragment].
  */
 class ImageListViewModel(private val repository: RedditImageRepository) : ViewModel() {
 

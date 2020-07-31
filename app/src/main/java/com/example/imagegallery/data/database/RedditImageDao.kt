@@ -1,5 +1,6 @@
 package com.example.imagegallery.data.database
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.imagegallery.app.RedditImages
 import com.example.imagegallery.data.model.RedditImage
@@ -19,4 +20,7 @@ interface RedditImageDao {
 
     @Delete
     suspend fun deleteImage(vararg images: RedditImage)
+
+    @Query("SELECT EXISTS(SELECT 1 FROM images WHERE id = :id LIMIT 1)")
+    fun isImageExists(id: String): LiveData<Boolean>
 }

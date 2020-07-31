@@ -18,4 +18,5 @@
     <!-- ImageInfoDialogFragment values -->
     <string name="subreddit_name_prefixed">r/%1$s</string>
     <string name="save">Save</string>
+    <string name="remove">Remove</string>
 </resources>

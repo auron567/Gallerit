@@ -2,9 +2,7 @@ package com.example.imagegallery.app
 
 import android.app.Application
 import com.example.imagegallery.BuildConfig
-import com.example.imagegallery.di.appModule
-import com.example.imagegallery.di.databaseModule
-import com.example.imagegallery.di.networkModule
+import com.example.imagegallery.di.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -19,14 +17,26 @@ class MyApplication : Application() {
         setupTimber()
     }
 
+    /**
+     * Koin configuration.
+     */
     private fun setupKoin() {
         startKoin {
             androidLogger()
             androidContext(this@MyApplication)
-            modules(appModule, networkModule, databaseModule)
+            modules(
+                appModule,
+                viewModelModule,
+                repositoryModule,
+                networkModule,
+                databaseModule
+            )
         }
     }
 
+    /**
+     * Timber configuration.
+     */
     private fun setupTimber() {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())

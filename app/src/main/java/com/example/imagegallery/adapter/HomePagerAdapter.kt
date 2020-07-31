@@ -2,9 +2,13 @@ package com.example.imagegallery.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
 import com.example.imagegallery.view.main.CollectionFragment
 import com.example.imagegallery.view.main.ImageListFragment
 
+/**
+ * Adapter class [FragmentStateAdapter] for [ViewPager2].
+ */
 class HomePagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
     /**

@@ -1,5 +1,6 @@
 package com.example.imagegallery.data.repository
 
+import androidx.lifecycle.LiveData
 import com.example.imagegallery.app.RedditImages
 import com.example.imagegallery.data.database.RedditImageDao
 import com.example.imagegallery.data.model.RedditImage
@@ -45,6 +46,13 @@ class RedditImageRepository(
      */
     suspend fun removeFavorite(image: RedditImage) {
         dao.deleteImage(image)
+    }
+
+    /**
+     * Check if an image with a certain [id] is in the database.
+     */
+    fun isFavorite(id: String): LiveData<Boolean> {
+        return dao.isImageExists(id)
     }
 
     /**
