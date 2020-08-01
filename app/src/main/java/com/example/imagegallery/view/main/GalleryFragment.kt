@@ -26,8 +26,15 @@ class GalleryFragment : Fragment() {
         binding = FragmentGalleryBinding.inflate(inflater, container, false)
 
         setViewPager()
+        setFullscreen()
 
         return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        exitFullscreen()
     }
 
     /**
@@ -55,5 +62,19 @@ class GalleryFragment : Fragment() {
 
         // Navigate to ImageInfoDialogFragment
         findNavController().navigate(direction)
+    }
+
+    /**
+     * Enable fullscreen mode.
+     */
+    private fun setFullscreen() {
+        activity?.window?.addFlags(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
+    }
+
+    /**
+     * Disable fullscreen mode.
+     */
+    private fun exitFullscreen() {
+        activity?.window?.clearFlags(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
     }
 }
