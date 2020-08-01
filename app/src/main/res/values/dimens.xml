@@ -11,4 +11,5 @@
     <dimen name="card_bottom_margin">16dp</dimen>
     <dimen name="card_side_margin">8dp</dimen>
     <dimen name="card_corner_radius">10dp</dimen>
+    <dimen name="no_data_text_size">18sp</dimen>
 </resources>

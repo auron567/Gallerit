@@ -6,10 +6,7 @@ import com.example.imagegallery.data.database.RedditImageDao
 import com.example.imagegallery.data.model.RedditImage
 import com.example.imagegallery.data.model.Result
 import com.example.imagegallery.data.network.RedditImageRemote
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.transform
+import kotlinx.coroutines.flow.*
 
 /**
  * Repository module for handling [RedditImage] data operations.
@@ -23,15 +20,9 @@ class RedditImageRepository(
      * Fetch the list of favorite [RedditImage] from the database.
      */
     val favoriteImages: Flow<Result<RedditImages>>
-        get() = dao.getAllImages().transform { images ->
-            // Emit loading result
-            emit(Result.loading())
-
+        get() = dao.getAllImages().map { images ->
             // Emit success or empty result
-            emit(Result.successOrEmpty(images))
-        }.catch { e ->
-            // Emit error result
-            emit(Result.error(e))
+            Result.successOrEmpty(images)
         }
 
     /**

@@ -12,8 +12,11 @@
     <!-- ImageListFragment values -->
     <string name="search">Search</string>
     <string name="subreddit">Subreddit…</string>
-    <string name="no_images">No images to show!</string>
+    <string name="no_image_show">No image to show!</string>
     <string name="no_internet">No internet connection!</string>
+
+    <!-- CollectionFragment values -->
+    <string name="no_image_saved">No image saved!</string>
 
     <!-- ImageInfoDialogFragment values -->
     <string name="subreddit_name_prefixed">r/%1$s</string>

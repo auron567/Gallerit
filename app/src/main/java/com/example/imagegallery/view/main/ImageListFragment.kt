@@ -49,20 +49,21 @@ class ImageListFragment : Fragment() {
         viewModel.images.observe(viewLifecycleOwner) { result ->
             when (result) {
                 is Result.Loading -> {
+                    // Set refreshing state
                     binding.swipeRefreshLayout.isRefreshing = true
                 }
                 is Result.Success -> {
                     showImagesRecyclerView(result.data)
                 }
                 is Result.Empty -> {
-                    val message = getString(R.string.no_images)
+                    val message = getString(R.string.no_image_show)
                     showEmptyView(message)
                 }
                 is Result.Error -> {
                     val message = if (result.isNetworkError) {
                         getString(R.string.no_internet)
                     } else {
-                        getString(R.string.no_images)
+                        getString(R.string.no_image_show)
                     }
                     showEmptyView(message)
                 }
@@ -75,8 +76,12 @@ class ImageListFragment : Fragment() {
      */
     private fun showEmptyView(message: String) {
         with(binding) {
+            // Stop refreshing state
             swipeRefreshLayout.isRefreshing = false
-            hasImages = false
+
+            imagesRecyclerView.visibility = View.INVISIBLE
+            noDataGroup.visibility = View.VISIBLE
+
             noDataText.text = message
         }
 
@@ -89,10 +94,14 @@ class ImageListFragment : Fragment() {
      */
     private fun showImagesRecyclerView(images: RedditImages) {
         with(binding) {
+            // Stop refreshing state
             swipeRefreshLayout.isRefreshing = false
-            hasImages = true
+
+            imagesRecyclerView.visibility = View.VISIBLE
+            noDataGroup.visibility = View.GONE
         }
 
+        // Submit the list of images
         imageAdapter.submitList(images)
     }
 
