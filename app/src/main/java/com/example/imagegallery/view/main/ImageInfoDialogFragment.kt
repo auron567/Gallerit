@@ -5,13 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.example.imagegallery.R
 import com.example.imagegallery.databinding.DialogFragmentImageInfoBinding
 import com.example.imagegallery.viewmodel.ImageInfoViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import kotlinx.coroutines.launch
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -57,17 +55,13 @@ class ImageInfoDialogFragment : BottomSheetDialogFragment() {
      */
     private fun setButtonsClickListener() {
         binding.saveButton.setOnClickListener {
-            lifecycleScope.launch {
-                imageInfoViewModel.saveImage()
-                this@ImageInfoDialogFragment.dismiss()
-            }
+            imageInfoViewModel.saveImage()
+            this@ImageInfoDialogFragment.dismiss()
         }
 
         binding.removeButton.setOnClickListener {
-            lifecycleScope.launch {
-                imageInfoViewModel.removeImage()
-                this@ImageInfoDialogFragment.dismiss()
-            }
+            imageInfoViewModel.removeImage()
+            this@ImageInfoDialogFragment.dismiss()
         }
     }
 }
