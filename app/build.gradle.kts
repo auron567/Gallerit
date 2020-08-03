@@ -88,6 +88,7 @@ dependencies {
     testImplementation(TestLibs.mockk)
     testImplementation(TestLibs.kotestAssertions)
     testImplementation(TestLibs.androidxTest)
+    testImplementation(TestLibs.archTest)
     testImplementation(TestLibs.coroutinesTest)
     testImplementation(TestLibs.robolectric)
 }

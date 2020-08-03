@@ -10,6 +10,7 @@ private object Versions {
     const val viewpager = "1.0.0"
     const val material = "1.1.0"
     const val lifecycle = "2.2.0"
+    const val arch = "2.1.0"
     const val navigation = "2.3.0"
     const val room = "2.2.5"
     const val retrofit = "2.9.0"
@@ -66,6 +67,7 @@ object TestLibs {
     const val mockk = "io.mockk:mockk:${Versions.mockk}"
     const val kotestAssertions = "io.kotest:kotest-assertions-core-jvm:${Versions.kotest}"
     const val androidxTest = "androidx.test:core:${Versions.androidxTest}"
+    const val archTest = "androidx.arch.core:core-testing:${Versions.arch}"
     const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
     const val robolectric = "org.robolectric:robolectric:${Versions.robolectric}"
 }
