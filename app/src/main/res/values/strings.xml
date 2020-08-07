@@ -22,4 +22,6 @@
     <string name="subreddit_name_prefixed">r/%1$s</string>
     <string name="save">Save</string>
     <string name="remove">Remove</string>
+    <string name="added_to_favorites">Added to favorites</string>
+    <string name="removed_from_favorites">Removed from favorites</string>
 </resources>
