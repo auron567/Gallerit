@@ -1,23 +1,32 @@
 package com.example.imagegallery.data.repository
 
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.lifecycle.MutableLiveData
 import com.example.imagegallery.data.database.RedditImageDao
 import com.example.imagegallery.data.model.RedditImage
 import com.example.imagegallery.data.network.RedditImageRemote
 import com.example.imagegallery.utils.*
+import io.kotest.matchers.booleans.shouldBeFalse
+import io.kotest.matchers.booleans.shouldBeTrue
 import io.kotest.matchers.collections.shouldHaveSize
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.coVerify
+import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.mockk.impl.annotations.RelaxedMockK
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import java.io.IOException
 
 class RedditImageRepositoryTest {
+
+    @get:Rule
+    val instantExecutorRule = InstantTaskExecutorRule()
 
     private lateinit var repository: RedditImageRepository
     @MockK lateinit var remote: RedditImageRemote
@@ -79,6 +88,34 @@ class RedditImageRepositoryTest {
         coVerify(exactly = 1) {
             dao.deleteImage(image)
         }
+    }
+
+    @Test
+    fun isFavorite_returnsTrue() {
+        // Stub dao
+        val image = makeRedditImage()
+        every { dao.isImageExists(image.id) } returns MutableLiveData(true)
+
+        // Call repository
+        val liveData = repository.isFavorite(image.id)
+        val value = liveData.getOrAwaitValue()
+
+        // Assertions
+        value.shouldBeTrue()
+    }
+
+    @Test
+    fun isFavorite_returnsFalse() {
+        // Stub dao
+        val image = makeRedditImage()
+        every { dao.isImageExists(image.id) } returns MutableLiveData(false)
+
+        // Call repository
+        val liveData = repository.isFavorite(image.id)
+        val value = liveData.getOrAwaitValue()
+
+        // Assertions
+        value.shouldBeFalse()
     }
 
     @Test
