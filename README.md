@@ -38,5 +38,13 @@ Gallerit is based on [MVVM](https://developer.android.com/jetpack/guide#recommen
 ![](media/GalleritArchitecture.png)
 ## Reddit API
 Gallerit uses the [Reddit API](https://www.reddit.com/dev/api/) to load images on the gallery screen.
+## Getting started
+There are a few ways to open this project.
+### Android Studio
+1. Android Studio -> File -> New -> Project from Version Control
+2. Enter `https://github.com/auron567/Gallerit.git` into URL field
+### Command line + Android Studio
+1. Run `git clone https://github.com/auron567/Gallerit.git`
+2. Android Studio -> File -> Open
 ## Contribute
 If you want to contribute to this application, you're always welcome! You can contribute by filing issues, bugs and PRs.
