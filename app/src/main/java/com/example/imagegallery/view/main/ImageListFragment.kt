@@ -1,7 +1,11 @@
 package com.example.imagegallery.view.main
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
@@ -9,7 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.imagegallery.R
 import com.example.imagegallery.adapter.RedditImageAdapter
-import com.example.imagegallery.app.RedditImages
+import com.example.imagegallery.data.model.RedditImages
 import com.example.imagegallery.data.model.Result
 import com.example.imagegallery.databinding.FragmentImageListBinding
 import com.example.imagegallery.viewmodel.ImageListViewModel

@@ -2,7 +2,11 @@ package com.example.imagegallery.app
 
 import android.app.Application
 import com.example.imagegallery.BuildConfig
-import com.example.imagegallery.di.*
+import com.example.imagegallery.di.appModule
+import com.example.imagegallery.di.databaseModule
+import com.example.imagegallery.di.networkModule
+import com.example.imagegallery.di.repositoryModule
+import com.example.imagegallery.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

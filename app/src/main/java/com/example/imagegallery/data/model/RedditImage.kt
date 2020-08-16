@@ -15,4 +15,6 @@ data class RedditImage(
     val title: String,
     val subreddit: String,
     val url: String
-): Parcelable
+) : Parcelable
+
+typealias RedditImages = List<RedditImage>

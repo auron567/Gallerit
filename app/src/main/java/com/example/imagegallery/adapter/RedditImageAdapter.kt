@@ -31,8 +31,8 @@ class RedditImageAdapter(
         (holder as RedditImageViewHolder).bind(image, onItemClicked)
     }
 
-    class RedditImageViewHolder(private val binding: ListItemImageBinding)
-        : RecyclerView.ViewHolder(binding.root) {
+    class RedditImageViewHolder(private val binding: ListItemImageBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(image: RedditImage, onItemClicked: (Int) -> Unit) {
             binding.root.setOnClickListener {

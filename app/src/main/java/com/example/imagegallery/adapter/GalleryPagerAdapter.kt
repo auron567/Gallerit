@@ -4,9 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.example.imagegallery.app.RedditImages
 import com.example.imagegallery.app.load
 import com.example.imagegallery.data.model.RedditImage
+import com.example.imagegallery.data.model.RedditImages
 import com.example.imagegallery.databinding.ListItemGalleryBinding
 
 /**
@@ -39,8 +39,8 @@ class GalleryPagerAdapter(
         notifyDataSetChanged()
     }
 
-    class ViewHolder(private val binding: ListItemGalleryBinding)
-        : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: ListItemGalleryBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(image: RedditImage, onItemClicked: (RedditImage) -> Unit) {
             binding.imageView.setOnClickListener {

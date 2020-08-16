@@ -1,15 +1,15 @@
 package com.example.imagegallery.view.main
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.imagegallery.adapter.RedditImageAdapter
-import com.example.imagegallery.app.RedditImages
+import com.example.imagegallery.data.model.RedditImages
 import com.example.imagegallery.data.model.Result
 import com.example.imagegallery.databinding.FragmentCollectionBinding
 import com.example.imagegallery.viewmodel.CollectionViewModel

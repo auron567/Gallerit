@@ -5,7 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import com.example.imagegallery.data.database.RedditImageDao
 import com.example.imagegallery.data.model.RedditImage
 import com.example.imagegallery.data.network.RedditImageRemote
-import com.example.imagegallery.utils.*
+import com.example.imagegallery.utils.getOrAwaitValue
+import com.example.imagegallery.utils.makeRedditImage
+import com.example.imagegallery.utils.shouldBeEmpty
+import com.example.imagegallery.utils.shouldBeError
+import com.example.imagegallery.utils.shouldBeLoading
+import com.example.imagegallery.utils.shouldBeSuccess
 import io.kotest.matchers.booleans.shouldBeFalse
 import io.kotest.matchers.booleans.shouldBeTrue
 import io.kotest.matchers.collections.shouldHaveSize
@@ -15,13 +20,13 @@ import io.mockk.coVerify
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.mockk.impl.annotations.RelaxedMockK
+import java.io.IOException
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import java.io.IOException
 
 class RedditImageRepositoryTest {
 

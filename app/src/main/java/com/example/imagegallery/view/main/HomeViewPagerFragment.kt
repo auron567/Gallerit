@@ -1,11 +1,11 @@
 package com.example.imagegallery.view.main
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.imagegallery.R
 import com.example.imagegallery.adapter.COLLECTION_PAGE_INDEX
 import com.example.imagegallery.adapter.HomePagerAdapter

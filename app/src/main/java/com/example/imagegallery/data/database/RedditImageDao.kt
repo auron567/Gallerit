@@ -1,9 +1,13 @@
 package com.example.imagegallery.data.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.*
-import com.example.imagegallery.app.RedditImages
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 import com.example.imagegallery.data.model.RedditImage
+import com.example.imagegallery.data.model.RedditImages
 import kotlinx.coroutines.flow.Flow
 
 /**

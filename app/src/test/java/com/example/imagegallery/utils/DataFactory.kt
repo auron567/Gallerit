@@ -1,7 +1,11 @@
 package com.example.imagegallery.utils
 
-import com.example.imagegallery.data.model.*
-import java.util.*
+import com.example.imagegallery.data.model.RedditChild
+import com.example.imagegallery.data.model.RedditData
+import com.example.imagegallery.data.model.RedditImage
+import com.example.imagegallery.data.model.RedditPost
+import com.example.imagegallery.data.model.RedditResponse
+import java.util.UUID
 
 fun makeRedditResponse(posts: List<RedditPost>): RedditResponse {
     val children = mutableListOf<RedditChild>()

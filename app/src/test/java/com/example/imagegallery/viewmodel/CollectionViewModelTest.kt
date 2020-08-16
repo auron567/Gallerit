@@ -3,7 +3,11 @@ package com.example.imagegallery.viewmodel
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.imagegallery.data.model.Result
 import com.example.imagegallery.data.repository.RedditImageRepository
-import com.example.imagegallery.utils.*
+import com.example.imagegallery.utils.CoroutineTestRule
+import com.example.imagegallery.utils.getOrAwaitValue
+import com.example.imagegallery.utils.makeRedditImage
+import com.example.imagegallery.utils.shouldBeEmpty
+import com.example.imagegallery.utils.shouldBeSuccess
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.MockK

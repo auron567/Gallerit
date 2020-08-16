@@ -1,4 +1,4 @@
-private object Versions {
+object Versions {
     const val androidGradlePlugin = "4.0.1"
     const val kotlin = "1.3.72"
     const val coroutines = "1.3.8"
@@ -24,12 +24,15 @@ private object Versions {
     const val kotest = "4.1.2"
     const val androidxTest = "1.2.0"
     const val robolectric = "4.3.1"
+    const val ktlint = "0.37.2"
+    const val ktlintGradle = "9.3.0"
 }
 
 object BuildPlugins {
     const val androidGradle = "com.android.tools.build:gradle:${Versions.androidGradlePlugin}"
     const val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
     const val safeArgsGradle = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}"
+    const val ktlintGradle = "org.jlleitschuh.gradle:ktlint-gradle:${Versions.ktlintGradle}"
 }
 
 object Libs {
