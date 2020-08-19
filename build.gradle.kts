@@ -1,14 +1,17 @@
+plugins {
+    id("org.jlleitschuh.gradle.ktlint") version Versions.ktlintGradle
+    id("io.gitlab.arturbosch.detekt") version Versions.detekt
+}
+
 buildscript {
     repositories {
         google()
         jcenter()
-        maven("https://plugins.gradle.org/m2/")
     }
     dependencies {
         classpath(BuildPlugins.androidGradle)
         classpath(BuildPlugins.kotlinGradle)
         classpath(BuildPlugins.safeArgsGradle)
-        classpath(BuildPlugins.ktlintGradle)
     }
 }
 
@@ -17,6 +20,28 @@ allprojects {
         google()
         jcenter()
         maven("https://jitpack.io")
+    }
+}
+
+subprojects {
+    apply {
+        plugin("org.jlleitschuh.gradle.ktlint")
+        plugin("io.gitlab.arturbosch.detekt")
+    }
+
+    ktlint {
+        version.set(Versions.ktlint)
+        verbose.set(true)
+        android.set(true)
+    }
+
+    detekt {
+        reports {
+            html {
+                enabled = true
+                destination = file("build/reports/detekt.html")
+            }
+        }
     }
 }
 

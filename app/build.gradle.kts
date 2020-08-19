@@ -4,7 +4,6 @@ plugins {
     kotlin("android.extensions")
     kotlin("kapt")
     id("androidx.navigation.safeargs.kotlin")
-    id("org.jlleitschuh.gradle.ktlint")
 }
 
 android {
@@ -45,11 +44,6 @@ android {
             "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
             "-Xopt-in=kotlinx.coroutines.FlowPreview"
         )
-    }
-    ktlint {
-        version.set(Versions.ktlint)
-        verbose.set(true)
-        android.set(true)
     }
 }
 

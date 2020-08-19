@@ -30,7 +30,7 @@ class ImageListViewModel(private val repository: RedditImageRepository) : ViewMo
      */
     val images: LiveData<Result<RedditImages>> = query
         // Discard text typed in a very short time to avoid many network calls
-        .debounce(700)
+        .debounce(DEBOUNCE_MILLIS)
         // Filter empty text to avoid unnecessary network call
         .filter { text ->
             text.isNotEmpty()
@@ -50,3 +50,5 @@ class ImageListViewModel(private val repository: RedditImageRepository) : ViewMo
         query.value = text
     }
 }
+
+private const val DEBOUNCE_MILLIS = 700L

@@ -19,6 +19,7 @@
 - [Android Jetpack](https://developer.android.com/jetpack)
 - Reactive UI
 - Testing
+- Static analysis tools
 - Dependency Injection
 - [Gradle Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html)
 - Material Design
@@ -35,7 +36,7 @@
   - [Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle) - Create a UI that automatically responds to lifecycle events.
   - [Navigation](https://developer.android.com/guide/navigation) - Handle everything needed for in-app navigation.
   - [Room](https://developer.android.com/topic/libraries/architecture/room) - Access your app's SQLite database with in-app objects and compile-time checks.
-- [Retrofit2](https://square.github.io/retrofit/) - A type-safe HTTP client.
+- [Retrofit](https://square.github.io/retrofit/) - A type-safe HTTP client.
 - [Glide](https://bumptech.github.io/glide/) - An image loading and caching library.
 - [PhotoView](https://github.com/chrisbanes/PhotoView) - Implementation of ImageView that supports zooming.
 - [Koin](https://insert-koin.io/) - A pragmatic lightweight dependency injection framework.
@@ -61,6 +62,7 @@ Gallerit uses the [Reddit API](https://www.reddit.com/dev/api/) to load images o
 These are all of the Gradle tasks that are [workflows](https://github.com/auron567/Gallerit/tree/master/.github/workflows):
 
 - `./gradlew test` - Run unit tests
+- `./gradlew detekt` - Run detekt
 - `./gradlew ktlintCheck` - Run ktlint check
 - `./gradlew assembleDebug` - Build debug APK
 
