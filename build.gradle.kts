@@ -1,18 +1,9 @@
 plugins {
-    id("org.jlleitschuh.gradle.ktlint") version Versions.ktlintGradle
-    id("io.gitlab.arturbosch.detekt") version Versions.detekt
-}
-
-buildscript {
-    repositories {
-        google()
-        jcenter()
-    }
-    dependencies {
-        classpath(BuildPlugins.androidGradle)
-        classpath(BuildPlugins.kotlinGradle)
-        classpath(BuildPlugins.safeArgsGradle)
-    }
+    id(BuildPlugins.androidApplication) version BuildVersions.agp apply false
+    id(BuildPlugins.kotlinAndroid) version BuildVersions.kotlin apply false
+    id(BuildPlugins.safeArgs) version BuildVersions.safeArgs apply false
+    id(BuildPlugins.ktlintGradle) version BuildVersions.ktlintGradle
+    id(BuildPlugins.detekt) version BuildVersions.detekt
 }
 
 allprojects {
@@ -25,16 +16,14 @@ allprojects {
 
 subprojects {
     apply {
-        plugin("org.jlleitschuh.gradle.ktlint")
-        plugin("io.gitlab.arturbosch.detekt")
+        plugin(BuildPlugins.ktlintGradle)
+        plugin(BuildPlugins.detekt)
     }
-
     ktlint {
         version.set(Versions.ktlint)
         verbose.set(true)
         android.set(true)
     }
-
     detekt {
         reports {
             html {

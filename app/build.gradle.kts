@@ -1,9 +1,9 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
-    kotlin("android.extensions")
-    kotlin("kapt")
-    id("androidx.navigation.safeargs.kotlin")
+    id(BuildPlugins.androidApplication)
+    id(BuildPlugins.kotlinAndroid)
+    id(BuildPlugins.kotlinAndroidExtensions)
+    id(BuildPlugins.kotlinKapt)
+    id(BuildPlugins.safeArgs)
 }
 
 android {
@@ -48,8 +48,7 @@ android {
 }
 
 dependencies {
-    // Kotlin and Coroutines
-    implementation(Libs.kotlin)
+    // Coroutines
     implementation(Libs.coroutinesCore)
     implementation(Libs.coroutinesAndroid)
     // UI and Appcompat

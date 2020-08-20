@@ -1,6 +1,4 @@
 object Versions {
-    const val androidGradlePlugin = "4.0.1"
-    const val kotlin = "1.4.0"
     const val coroutines = "1.3.8"
     const val appcompat = "1.2.0"
     const val fragment = "1.2.5"
@@ -24,19 +22,28 @@ object Versions {
     const val kotest = "4.1.2"
     const val androidxTest = "1.2.0"
     const val robolectric = "4.3.1"
-    const val detekt = "1.11.1"
     const val ktlint = "0.37.2"
+}
+
+object BuildVersions {
+    const val agp = "4.0.1"
+    const val kotlin = "1.4.0"
+    const val safeArgs = Versions.navigation
     const val ktlintGradle = "9.3.0"
+    const val detekt = "1.11.1"
 }
 
 object BuildPlugins {
-    const val androidGradle = "com.android.tools.build:gradle:${Versions.androidGradlePlugin}"
-    const val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
-    const val safeArgsGradle = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}"
+    const val androidApplication = "com.android.application"
+    const val kotlinAndroid = "org.jetbrains.kotlin.android"
+    const val kotlinAndroidExtensions = "org.jetbrains.kotlin.android.extensions"
+    const val kotlinKapt = "org.jetbrains.kotlin.kapt"
+    const val safeArgs = "androidx.navigation.safeargs.kotlin"
+    const val ktlintGradle = "org.jlleitschuh.gradle.ktlint"
+    const val detekt = "io.gitlab.arturbosch.detekt"
 }
 
 object Libs {
-    const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
     const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
     const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
     const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
