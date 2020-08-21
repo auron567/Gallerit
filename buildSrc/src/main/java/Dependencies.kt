@@ -29,8 +29,9 @@ object BuildVersions {
     const val agp = "4.0.1"
     const val kotlin = "1.4.0"
     const val safeArgs = Versions.navigation
-    const val ktlintGradle = "9.3.0"
     const val detekt = "1.11.1"
+    const val ktlintGradle = "9.3.0"
+    const val versionsPlugin = "0.29.0"
 }
 
 object BuildPlugins {
@@ -39,8 +40,9 @@ object BuildPlugins {
     const val kotlinAndroidExtensions = "org.jetbrains.kotlin.android.extensions"
     const val kotlinKapt = "org.jetbrains.kotlin.kapt"
     const val safeArgs = "androidx.navigation.safeargs.kotlin"
-    const val ktlintGradle = "org.jlleitschuh.gradle.ktlint"
     const val detekt = "io.gitlab.arturbosch.detekt"
+    const val ktlintGradle = "org.jlleitschuh.gradle.ktlint"
+    const val versionsPlugin = "com.github.ben-manes.versions"
 }
 
 object Libs {
