@@ -8,7 +8,7 @@
 
 [![Kotlin Weekly](https://img.shields.io/badge/Kotlin%20Weekly-%23211-blueviolet.svg)](https://mailchi.mp/kotlinweekly/kotlin-weekly-211)
 
-<b>Gallerit</b> is a small demo application that presents a modern approach to Android development with up to date tech-stack. The goal of the project is to demonstrate best practices using modern Android development tools and presenting an architecture that is scalable, maintainable, and testable.
+**Gallerit** is a small demo application that presents a modern approach to Android development with up to date tech-stack. The goal of the project is to demonstrate best practices using modern Android development tools and presenting an architecture that is scalable, maintainable, and testable.
 
 ## Project characteristics
 
@@ -63,6 +63,7 @@ These are all of the Gradle tasks that are [workflows](https://github.com/auron5
 
 - `./gradlew test` - Run unit tests
 - `./gradlew detekt` - Run detekt
+- `./gradlew lint` - Run Android lint
 - `./gradlew ktlintCheck` - Run ktlint check
 - `./gradlew assembleDebug` - Build debug APK
 
@@ -70,12 +71,12 @@ These are all of the Gradle tasks that are [workflows](https://github.com/auron5
 
 There are a few ways to open this project.
 
-<b>Android Studio</b>
+**Android Studio**
 
 1. Android Studio -> File -> New -> Project from Version Control
 2. Enter `https://github.com/auron567/Gallerit.git` into URL field
 
-<b>Command line + Android Studio</b>
+**Command line + Android Studio**
 
 1. Run `git clone https://github.com/auron567/Gallerit.git`
 2. Android Studio -> File -> Open
