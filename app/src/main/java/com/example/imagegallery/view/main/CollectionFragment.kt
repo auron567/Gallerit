@@ -12,7 +12,7 @@ import com.example.imagegallery.data.model.RedditImages
 import com.example.imagegallery.data.model.Result
 import com.example.imagegallery.databinding.FragmentCollectionBinding
 import com.example.imagegallery.viewmodel.CollectionViewModel
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CollectionFragment : Fragment() {
 

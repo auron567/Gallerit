@@ -79,7 +79,6 @@ dependencies {
     implementation(Libs.retrofitConverterGson)
     implementation(Libs.loggingInterceptor)
     // Koin
-    implementation(Libs.koinAndroid)
     implementation(Libs.koinViewmodel)
     // Glide
     implementation(Libs.glide)
