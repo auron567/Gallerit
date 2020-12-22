@@ -16,7 +16,7 @@ import com.example.imagegallery.data.model.RedditImages
 import com.example.imagegallery.data.model.Result
 import com.example.imagegallery.databinding.FragmentImageListBinding
 import com.example.imagegallery.viewmodel.ImageListViewModel
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ImageListFragment : Fragment() {
 

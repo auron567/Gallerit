@@ -11,7 +11,7 @@ import com.example.imagegallery.app.toast
 import com.example.imagegallery.databinding.DialogFragmentImageInfoBinding
 import com.example.imagegallery.viewmodel.ImageInfoViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
 class ImageInfoDialogFragment : BottomSheetDialogFragment() {
